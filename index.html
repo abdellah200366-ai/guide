@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide Gratuit Robotique Arduino - Téléchargement Immédiat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Variables CSS */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --affiliate: #f39c12;
+            --mediafire: #2e86c1;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #2ecc71;
+            --text: #333;
+            --text-light: #7f8c8d;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        /* Reset et styles de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: #f9f9f9;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, #34495e 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .cta-button:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+        }
+
+        .mediafire-button {
+            display: inline-block;
+            background-color: var(--mediafire);
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(46, 134, 193, 0.3);
+        }
+
+        .mediafire-button:hover {
+            background-color: #2874a6;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(46, 134, 193, 0.4);
+        }
+
+        .affiliate-button {
+            display: inline-block;
+            background-color: var(--affiliate);
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+        }
+
+        .affiliate-button:hover {
+            background-color: #e67e22;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(243, 156, 18, 0.4);
+        }
+
+        /* MediaFire Download Section */
+        .mediafire-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .mediafire-container {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d4eaf7 100%);
+            border-radius: 15px;
+            padding: 50px;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--mediafire);
+            text-align: center;
+        }
+
+        .mediafire-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .mediafire-icon {
+            font-size: 2.5rem;
+            color: var(--mediafire);
+            margin-right: 15px;
+        }
+
+        .mediafire-title {
+            font-size: 2.2rem;
+            color: var(--primary);
+        }
+
+        .mediafire-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: var(--text);
+        }
+
+        .download-steps {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+
+        .step {
+            text-align: center;
+            max-width: 200px;
+            margin: 15px;
+        }
+
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background-color: var(--mediafire);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 15px;
+        }
+
+        .step p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* Email Form */
+        .email-form {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            margin-top: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .form-title {
+            text-align: center;
+            margin-bottom: 25px;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus {
+            border-color: var(--secondary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+
+        .form-button {
+            width: 100%;
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .form-button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .privacy-note {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Affiliate Section */
+        .affiliate-section {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+
+        .affiliate-container {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff0cc 100%);
+            border-radius: 15px;
+            padding: 50px;
+            box-shadow: var(--shadow);
+            border: 2px dashed var(--affiliate);
+        }
+
+        .affiliate-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .affiliate-icon {
+            font-size: 2.5rem;
+            color: var(--affiliate);
+            margin-right: 15px;
+        }
+
+        .affiliate-title {
+            font-size: 2.2rem;
+            color: var(--primary);
+        }
+
+        .affiliate-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: var(--text);
+            text-align: center;
+        }
+
+        .affiliate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .affiliate-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-left: 4px solid var(--affiliate);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .affiliate-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .affiliate-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .affiliate-card p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+            flex-grow: 1;
+        }
+
+        .card-button {
+            display: inline-block;
+            background-color: var(--affiliate);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .card-button:hover {
+            background-color: #e67e22;
+            transform: translateY(-2px);
+        }
+
+        .affiliate-note {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            text-align: center;
+            font-style: italic;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.2rem;
+            color: var(--primary);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid var(--secondary);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 25px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Guide Preview */
+        .guide-preview {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+
+        .preview-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .preview-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .preview-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            color: var(--primary);
+        }
+
+        .preview-text p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .preview-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+            position: relative;
+        }
+
+        .preview-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+        }
+
+        .image-badge {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background-color: var(--accent);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--light);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-links {
+                gap: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .preview-content {
+                flex-direction: column;
+            }
+            
+            .affiliate-container, .mediafire-container {
+                padding: 30px;
+            }
+            
+            .affiliate-title, .mediafire-title {
+                font-size: 1.8rem;
+            }
+            
+            .download-steps {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+            
+            .feature-card {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 70px 0;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .cta-button, .mediafire-button, .affiliate-button {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-robot"></i>
+                    <span>Robotique Arduino</span>
+                </div>
+                <nav class="nav-links">
+                    <a href="#guide">Le Guide</a>
+                    <a href="#kits">Kits Arduino</a>
+                    <a href="#telecharger">Télécharger</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>📘 Guide gratuit pour débuter la robotique avec Arduino</h1>
+                <p>Apprenez à créer vos premiers robots avec Arduino, même si vous n'avez aucune expérience en électronique ou programmation.</p>
+                <div class="hero-buttons">
+                    <a href="#telecharger" class="cta-button">Télécharger le guide gratuit</a>
+                    <a href="#kits" class="affiliate-button">Voir les kits recommandés</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MediaFire Download Section -->
+    <section class="mediafire-section" id="telecharger">
+        <div class="container">
+            <div class="mediafire-container">
+                <div class="mediafire-header">
+                    <div class="mediafire-icon">
+                        <i class="fas fa-cloud-download-alt"></i>
+                    </div>
+                    <h2 class="mediafire-title">Téléchargement Direct MediaFire</h2>
+                </div>
+                <p class="mediafire-subtitle">Obtenez votre guide gratuit instantanément via MediaFire - Aucune inscription requise !</p>
+                
+                <div class="download-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <p>Cliquez sur "Télécharger"</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <p>Le guide s'ouvre automatiquement</p>
+                    </div>
+                </div>
+                
+                <!-- Email Form -->
+                <div class="email-form">
+                    <h3 class="form-title">Téléchargez votre guide gratuit</h3>
+                    <form id="download-form">
+                        <button type="submit" class="form-button">
+                            <i class="fas fa-download"></i> Télécharger le guide gratuit via MediaFire
+                        </button>
+                    </form>
+                    <p class="privacy-note">Nous respectons votre vie privée. Pas de spam.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="guide">
+        <div class="container">
+            <h2 class="section-title">Ce que vous allez découvrir dans ce guide</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>Les bases d'Arduino</h3>
+                    <p>Comprenez le fonctionnement de la carte Arduino et son environnement de programmation. Apprenez les concepts fondamentaux de l'électronique et de la programmation.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Composants essentiels</h3>
+                    <p>Découvrez les capteurs, moteurs et autres composants indispensables pour créer des robots. Apprenez à les utiliser et à les connecter correctement.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Projets simples</h3>
+                    <p>Réalisez vos premiers robots avec des projets progressifs et bien expliqués. Chaque projet vous aide à acquérir de nouvelles compétences pratiques.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Conseils pratiques</h3>
+                    <p>Bénéficiez d'astuces et bonnes pratiques pour éviter les erreurs courantes. Apprenez à déboguer vos circuits et programmes efficacement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guide Preview -->
+    <section class="guide-preview">
+        <div class="container">
+            <div class="preview-content">
+                <div class="preview-text">
+                    <h2>Un guide complet pour débutants</h2>
+                    <p>Ce guide de 45 pages a été spécialement conçu pour les débutants qui souhaitent s'initier à la robotique avec Arduino. Vous y trouverez des explications claires, des schémas détaillés et des exemples concrets.</p>
+                    <p>Que vous soyez étudiant, maker ou simplement curieux, ce guide vous donnera les bases nécessaires pour créer vos premiers robots fonctionnels.</p>
+                    <p>Pas besoin de connaissances préalables en électronique ou programmation - nous vous guidons pas à pas !</p>
+                    <a href="#telecharger" class="cta-button">Télécharger le guide maintenant</a>
+                </div>
+                <div class="preview-image">
+                    <div class="image-badge">Gratuit</div>
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Guide Robotique Arduino">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Affiliate Section -->
+    <section class="affiliate-section" id="kits">
+        <div class="container">
+            <div class="affiliate-container">
+                <div class="affiliate-header">
+                    <div class="affiliate-icon">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <h2 class="affiliate-title">Kits Arduino Recommandés</h2>
+                </div>
+                <p class="affiliate-subtitle">Pour vous lancer rapidement, nous vous recommandons ces kits Arduino complets contenant tous les composants nécessaires.</p>
+                
+                <div class="affiliate-grid">
+                    <div class="affiliate-card">
+                        <h3>Kit Débutant Ultime</h3>
+                        <p>Idéal pour les premiers pas. Contient Arduino Uno, breadboard, capteurs, LEDs et tous les câbles nécessaires. Parfait pour suivre le guide pas à pas.</p>
+                        <a href="https://amzn.to/4mQU9u9" target="_blank" class="card-button">Voir sur Amazon</a>
+                    </div>
+                    <div class="affiliate-card">
+                        <h3>Kit Robotique Avancé</h3>
+                        <p>Pour ceux qui veulent aller plus loin avec des moteurs, servos et capteurs spécialisés pour la robotique. Inclut tout pour créer des robots mobiles.</p>
+                        <a href="https://amzn.to/4gPA6Li" target="_blank" class="card-button">Voir sur Amazon</a>
+                    </div>
+                    <div class="affiliate-card">
+                        <h3>Kit Capteurs Complet</h3>
+                        <p>Collection de 37 capteurs différents pour explorer toutes les possibilités d'Arduino. Idéal pour expérimenter après avoir maîtrisé les bases.</p>
+                        <a href="https://amzn.to/3IxwHnY" target="_blank" class="card-button">Voir sur Amazon</a>
+                    </div>
+                </div>
+                
+                <p class="affiliate-note">* Liens affiliés - Nous pouvons recevoir une commission sans surcoût pour vous. Ces kits ont été sélectionnés pour leur qualité et leur rapport qualité-prix.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="logo">
+                        <i class="fas fa-robot"></i>
+                        <span>Robotique Arduino</span>
+                    </div>
+                    <p style="margin-top: 15px; color: #bdc3c7;">Votre ressource complète pour apprendre la robotique avec Arduino. Guides gratuits, tutoriels et conseils pratiques.</p>
+                    <div class="social-links">
+                        <a href="https://web.facebook.com/profile.php?id=61579263008110&locale=ar_AR"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Liens rapides</h3>
+                    <div class="footer-links">
+                        <a href="#guide">Le Guide</a>
+                        <a href="#kits">Kits Arduino</a>
+                        <a href="#telecharger">Télécharger</a>
+                        <a href="#">Tutoriels</a>
+                        <a href="#">Blog</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <div class="footer-links">
+                        <a href="#">FAQ</a>
+                        <a href="#">Contact</a>
+                        <a href="#">Mentions légales</a>
+                        <a href="#">Politique de confidentialité</a>
+                        <a href="#">Conditions d'utilisation</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 Robotique Arduino. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Gestion du formulaire de téléchargement
+        document.getElementById('download-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            
+            // Votre lien MediaFire
+            const mediafireUrl = "https://www.mediafire.com/file/6eptw7j5o7yzg8f/R%25C3%25A9alisation%252Bd%25E2%2580%2599un%252Bproject%252Brobotic%252BMODH.pdf/file";
+            
+            // Ouvrir le lien MediaFire dans un nouvel onglet
+            window.open(mediafireUrl, '_blank');
+            
+            // Message de confirmation
+            if(email) {
+                alert('Merci ! Votre guide a été envoyé à ' + email + ' et s\'ouvre dans un nouvel onglet. Bonne lecture !');
+            } else {
+                alert('Téléchargement en cours... Votre guide s\'ouvre dans un nouvel onglet. Bonne lecture !');
+            }
+        });
+        
+        // Animation pour les liens de navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
